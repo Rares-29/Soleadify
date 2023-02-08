@@ -13,4 +13,4 @@ Request-urile au fost trimise printr-o functie async, pentru a putea fi trimise 
 Pentru a testa algoritmul, am luat un array mai mic, unde am adaugat doar primele 50 de website-uri.
 
 In rezolvarea problemei am efectuat o cautare manuala a adreselor pe primele 20 de pagini si am gasit niste tipare care se repeta.
-As mai fi dorit sa adaug si o cautare dupa tag-ul <address> si o cautare in toata pagina dupa niste keyword-uri specifice adreselor cum ar fi Address, Location, Located in,  Street, Contact, prescurtarile oraselor "NY", "FL", etc.Iar atunci cand un anumit keyword este gasit, as fi tintit pentru parintele ce contine string-ul respectiv si parintele parintelui(pentru ca multe adrese se aflau in <span> si span-ul intr-un <p>.
+As mai fi dorit sa adaug si o cautare dupa tag-ul <address> si o cautare in toata pagina dupa niste keyword-uri specifice adreselor cum ar fi Address, Location, Located in,  Street, Contact, prescurtarile oraselor "NY", "FL", etc.Iar atunci cand un anumit keyword este gasit, as fi tintit pentru parintele ce contine string-ul respectiv si parintele parintelui(pentru ca multe adrese se aflau in span, iar span-ul intr-un p.
