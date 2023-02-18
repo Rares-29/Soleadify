@@ -21,10 +21,10 @@ Am creat un pattern special pentru a identifica o adresa valida si am verificat 
 Am observat ca un pattern pentru adrese: incepe cu 1-6 digits, se termina cu 5 digits, iar in interior contine intre 2 si 10 cuvinte separate prin spatii. Daca se respecta pattern-ul adaug adresa in array.
 <br>
 <br>
-Pentru a gasi tara unei adrese, initial voiam sa folosesc o functie de mapping pentru fiecare oras in parte si sa returnez tara. Dar mi-am dat seama ca sunt foarte multe orase + ca nu pot obtine fiecare oras dintr-o adresa specifica, de exemplu: pentru New York, care contine 2 cuvinte sau o greseala mica de tipar din partea website-ului respectiv. Asa ca am folosit google Geocoding API si am creat un nou array in care: Daca s-a gasit tara unei adrese, adaug adresa initiala + "," + country-ul respectiv. Daca nu sau am intampinat vreo eroare, adaug in nou array doar adresa initiala.
+Pentru a gasi tara unei adrese, initial voiam sa folosesc o functie de mapping pentru fiecare oras in parte si sa returnez tara. Dar mi-am dat seama ca sunt foarte multe orase + ca nu pot obtine fiecare oras dintr-o adresa specifica, de exemplu: pentru New York, care contine 2 cuvinte sau o greseala mica de tipar din partea website-ului respectiv. Asa ca am folosit google Geocoding API si am creat un nou array in care: Daca s-a gasit tara unei adrese, adaug adresa initiala + "," + country-ul respectiv. Daca nu sau am intampinat vreo eroare, adaug in noul array doar adresa initiala.
 <br>
 <br>
-Modularitate - am organizat codul in fisiere separate pentru fiecare functionalitate in parte
+Modularitate - am organizat codul in fisiere separate pentru fiecare functionalitate in parte.
 <br>
 <br>
 <br>
