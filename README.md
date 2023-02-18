@@ -8,22 +8,30 @@ Pentru fiecare request am modificat cancelToken(deprecatted) cu signals
 <br>
 Am observat ca nu pot trimite foarte multe request-uri in paralel de pe calculatorul meu, pentru ca dupa cateva request-uri ar incepe toate sa dea fail, asa ca am setat un Timeout in for de 30 de secunde, o data la fiecare 80 de request-uri.
 <br>
+<br>
 Pentru fiecare website - obtin toate paginile care contin in a href unul dintre keyword-urile ['FAQ', 'F-A-Q', 'POLICY', 'CONTACT', 'ABOUT'], astfel reusesc sa extrag paginile importante in conformitate cu cerinta. Cum unele link-uri erau de tipul "/about" iar altele "http://www.example.com/about", am facut o verificare a primelor 4 caractere pentru a stii cum formez noul link si l-am adaugat in array-ul de pagini.
+<br>
 <br>
 Am creat un classes.json pentru posibilele nume de clase ale elementelor care contin adrese si am parcurs fiecare element, in cautarea celor care contin una dintre clasele respective si am extras text-ul din ele. 
 <br>
+<br>
 Am extras text-ul din footer.
+<br>
 <br>
 Am creat un pattern special pentru a identifica o adresa valida si am verificat printr-o functie ca adresa respectiva sa nu se regaseasca deja in array-ul de adrese. 
 <br>
+<br>
 Am observat ca un pattern pentru adrese: incepe cu 1-6 digits, se termina cu 5 digits, iar in interior contine intre 2 si 10 cuvinte separate prin spatii. Daca se respecta pattern-ul adaug adresa in array.
 <br>
-Pentru a gasi tara unei adrese, initial voiam sa folosesc o functie de mapping pentru fiecare oras in parte si sa returnez tara. Dar mi-am dat seama ca sunt foarte multe orase + ca nu pot obtine fiecare oras dintr-o adresa specifica, de exemplu: pentru New York, care contine 2 cuvinte sau o greseala mica de tipar din partea website-ului respectiv. Asa ca am folosit un google Geocoding API si am creat un nou array in care: Daca s-a gasit tara unei adrese, adaug adresa initiala + "," + <country>. Daca nu sau am intampinat vreo eroare, adaug in nou array doar adresa initiala.
+<br>
+Pentru a gasi tara unei adrese, initial voiam sa folosesc o functie de mapping pentru fiecare oras in parte si sa returnez tara. Dar mi-am dat seama ca sunt foarte multe orase + ca nu pot obtine fiecare oras dintr-o adresa specifica, de exemplu: pentru New York, care contine 2 cuvinte sau o greseala mica de tipar din partea website-ului respectiv. Asa ca am folosit un google Geocoding API si am creat un nou array in care: Daca s-a gasit tara unei adrese, adaug adresa initiala + "," + "<country>". Daca nu sau am intampinat vreo eroare, adaug in nou array doar adresa initiala.
+<br>
 <br>
 Modularitate - am organizat codul in fisiere separate pentru fiecare functionalitate in parte
-
-
-
+<br>
+<br>
+<br>
+<br>
 Abordarea problemei: 
 Am folosit duckdb ca sa extrag link-urile catre website-uri. Website-urile extrase le-am parcurs unul cate unul, si am creat o promisiune de tip Promise.all pentru a astepta ca request-urile sa fie finalizate.
 In parcurgere, am trimis un request la pagina principala a fiecarui website prin axios si am creat un cancelToken, pentru a opri request-ul dupa 3000 de secunde, deoarece daca un request ar fi dat fail, dupa el, toate request-urile ar fi fost interpretate ca fail. 
