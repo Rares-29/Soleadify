@@ -3,7 +3,7 @@
 - Check whether the program correctly extracts the country, region, city, postcode, road, and road numbers from every page of every website.
 - From a tech stack perspective, you can use any programming language, toolset or libraries you're comfortable with or find necessary, especially if you know it will be better or more interesting (we generally prefer Node, Python, Scala).
 
-<h2>-UPDATE-:</h2>
+<h2>-UPDATE-</h2>
 Pentru fiecare request am modificat cancelToken(deprecatted) cu signals
 <br>
 Am observat ca nu pot trimite foarte multe request-uri in paralel de pe calculatorul meu, pentru ca dupa cateva request-uri ar incepe toate sa dea fail, asa ca am setat un Timeout in for de 30 de secunde, o data la fiecare 80 de request-uri.
@@ -12,10 +12,7 @@ Am observat ca nu pot trimite foarte multe request-uri in paralel de pe calculat
 Pentru fiecare website - obtin toate paginile care contin in a href unul dintre keyword-urile ['FAQ', 'F-A-Q', 'POLICY', 'CONTACT', 'ABOUT'], astfel reusesc sa extrag paginile importante in conformitate cu cerinta. Cum unele link-uri erau de tipul "/about" iar altele "http://www.example.com/about", am facut o verificare a primelor 4 caractere pentru a stii cum formez noul link si l-am adaugat in array-ul de pagini.
 <br>
 <br>
-Am creat un classes.json pentru posibilele nume de clase ale elementelor care contin adrese si am parcurs fiecare element, in cautarea celor care contin una dintre clasele respective si am extras text-ul din ele. 
-<br>
-<br>
-Am extras text-ul din footer.
+Am creat un classes.json pentru posibilele nume de clase ale elementelor care contin adrese si am parcurs fiecare element, in cautarea celor care contin una dintre clasele respective si am extras text-ul din ele. + Am extras text-ul din footer.
 <br>
 <br>
 Am creat un pattern special pentru a identifica o adresa valida si am verificat printr-o functie ca adresa respectiva sa nu se regaseasca deja in array-ul de adrese. 
