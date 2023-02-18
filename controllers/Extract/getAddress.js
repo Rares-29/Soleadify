@@ -8,7 +8,7 @@ const classes = JSON.parse(classesjs);
 
 
 let addresses = [];
-let pattern = /\d{1,6}\s+[a-zA-Z](\S+\s+){2,8}\d\d\d\d\d/g;
+let pattern = /\d{1,6}\s+[a-zA-Z](\S+\s+){2,10}\d\d\d\d\d/g;
 //pattern = (/\d{1,6}(\s+\S+){2,10}\s\d\d\d\d\d/g);
 
 function verify(start, result) {
