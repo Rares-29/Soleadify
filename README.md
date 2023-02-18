@@ -31,8 +31,8 @@ Modularitate - am organizat codul in fisiere separate pentru fiecare functionali
 <br>
 <br>
 <br>
-<br>
-Abordarea problemei: 
+  
+<h2>Abordarea problemei:</h2> 
 Am folosit duckdb ca sa extrag link-urile catre website-uri. Website-urile extrase le-am parcurs unul cate unul, si am creat o promisiune de tip Promise.all pentru a astepta ca request-urile sa fie finalizate.
 In parcurgere, am trimis un request la pagina principala a fiecarui website prin axios si am creat un cancelToken, pentru a opri request-ul dupa 3000 de secunde, deoarece daca un request ar fi dat fail, dupa el, toate request-urile ar fi fost interpretate ca fail. 
 Dupa primirea datelor din request, am folosit cheerio pentru manipularea datelor. Cu cheerio am extras textul fiecarui element care continea o clasa ce avea primele 6 caractere "contact". Am extras toate link-urile unui website tot cu ajutorul lui cheerio, tintind dupa atributul href al fiecarui element <a> si le-am adaugat in array-ul links.
